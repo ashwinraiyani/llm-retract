@@ -1,0 +1,107 @@
+═══════════════════════════════════════════════════════════════════════════
+SETUP INSTRUCTIONS — Publication-Quality Figure Generation (v2.0)
+═══════════════════════════════════════════════════════════════════════════
+
+📋 WHAT YOU NEED
+
+The script requires 3 CSV data files in the same directory:
+
+1. A1_final.csv
+   └─ Contains: LLM-retracted papers metadata
+   └─ Columns: Publisher, OriginalPaperDate, etc.
+
+2. A1_scopus_merged.csv
+   └─ Contains: Scopus citation data for retracted papers
+   └─ Columns: Year, Cited by, Source title, etc.
+
+3. analysis_corpus.csv
+   └─ Contains: Full corpus data (comparison papers)
+   └─ Columns: Title, Cited by, Author Keywords, etc.
+
+═══════════════════════════════════════════════════════════════════════════
+STEPS TO RUN
+═══════════════════════════════════════════════════════════════════════════
+
+1. Place the 3 CSV files in your working directory:
+   
+   your_project/
+   ├── generate_all_figures.py
+   ├── A1_final.csv
+   ├── A1_scopus_merged.csv
+   └── analysis_corpus.csv
+
+2. Run the script:
+
+   python generate_all_figures.py
+
+3. Wait 5-10 seconds for generation
+
+4. Verify output:
+
+   ls -lh fig*.png
+
+   Should see:
+   ✓ fig1_bar.png (~150 KB)
+   ✓ fig2_donut.png (~140 KB)
+   ✓ fig3_citation_boxplot.png (~180 KB)
+   ✓ fig4_citation_grouped.png (~160 KB)
+   ✓ fig5_zero_citation_stacked.png (~170 KB)
+   ✓ fig6_retraction_lag.png (~220 KB)
+   ✓ fig7_keyword_anomaly.png (~200 KB)
+   ✓ fig8_heatmap.png (~250 KB)
+
+═══════════════════════════════════════════════════════════════════════════
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════
+
+ERROR: "FileNotFoundError: A1_final.csv"
+→ Solution: CSV files missing. Verify they're in the same directory as script
+
+ERROR: "ModuleNotFoundError: matplotlib"
+→ Solution: pip install pandas matplotlib seaborn numpy
+
+ERROR: "KeyError" or data column not found
+→ Solution: CSV column names don't match. Check your data format.
+
+═══════════════════════════════════════════════════════════════════════════
+SCRIPT FEATURES
+═══════════════════════════════════════════════════════════════════════════
+
+✅ 600 DPI resolution (publication-grade)
+✅ Zero text overlap (automatic layout)
+✅ Arial typography (professional)
+✅ Consistent colors (7-color palette)
+✅ IEEE/Springer/Elsevier compliant
+✅ Drop-in replacement (same filenames)
+✅ Fully commented code
+✅ Error handling
+
+═══════════════════════════════════════════════════════════════════════════
+CUSTOMIZATION
+═══════════════════════════════════════════════════════════════════════════
+
+To change colors:
+→ Edit lines 31-37 (C_PURPLE, C_TEAL, etc.)
+
+To change fonts:
+→ Edit lines 15-24 (plt.rcParams)
+
+To change DPI:
+→ Edit line 43 (OUTPUT_DPI = 600)
+
+To regenerate single figure:
+→ Comment out other generate_fig*() calls at bottom
+
+See CUSTOMIZATION_GUIDE.md for detailed instructions.
+
+═══════════════════════════════════════════════════════════════════════════
+READY?
+═══════════════════════════════════════════════════════════════════════════
+
+Once you have the 3 CSV files in place:
+
+python generate_all_figures.py
+
+Your 8 publication-quality figures will be ready in ~10 seconds! ✨
+
+═══════════════════════════════════════════════════════════════════════════
