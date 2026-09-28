@@ -63,6 +63,15 @@
   let hhriBreakdownChart;
   let stateHhriChart;
 
+  function renderDistrictAlertList() {
+    districtAlertListEl.replaceChildren();
+    enrichedDistricts.forEach((district) => {
+      const item = document.createElement("li");
+      item.textContent = `${district.name}: ${district.alertLevel} alert`;
+      districtAlertListEl.appendChild(item);
+    });
+  }
+
   function renderSummary() {
     const order = ["Green", "Yellow", "Orange", "Red"];
     const counts = order.reduce((acc, level) => {
@@ -83,15 +92,6 @@
 
     if (stateHhriChart) {
       stateHhriChart.destroy();
-    }
-
-    function renderDistrictAlertList() {
-      districtAlertListEl.replaceChildren();
-      enrichedDistricts.forEach((district) => {
-        const item = document.createElement("li");
-        item.textContent = `${district.name}: ${district.alertLevel} alert`;
-        districtAlertListEl.appendChild(item);
-      });
     }
 
     stateHhriChart = new Chart(document.getElementById("stateHhriChart"), {
