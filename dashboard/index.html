@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      AI-Based Heatwave Early Warning and Health Risk Prediction System — Prototype Dashboard
+    </title>
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>
+        AI-Based Heatwave Early Warning and Health Risk Prediction System — Prototype
+        Dashboard (Demo)
+      </h1>
+      <p class="subtitle">
+        Decision-support concept preview for committee demonstration
+      </p>
+    </header>
+
+    <section class="disclaimer-banner">
+      ⚠️ CONCEPTUAL PROTOTYPE ONLY — ALL VALUES ARE SAMPLE / SYNTHETIC DATA FOR
+      DEMONSTRATION PURPOSES ONLY. THIS DASHBOARD IS NOT CONNECTED TO LIVE
+      GOVERNMENT DATA SOURCES.
+    </section>
+
+    <main class="layout-grid">
+      <section class="panel" aria-labelledby="summary-title">
+        <div class="panel-header">
+          <h2 id="summary-title">Statewide Alert Summary</h2>
+        </div>
+        <div class="summary-cards" id="summary-cards"></div>
+        <div class="chart-wrap short">
+          <canvas id="stateHhriChart" aria-label="State HHRI bar chart">
+            State HHRI comparison bar chart
+          </canvas>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="map-title">
+        <div class="panel-header">
+          <h2 id="map-title">Gujarat District Alert Map</h2>
+        </div>
+        <div id="map" aria-label="District alert map"></div>
+        <p class="small-note">
+          Click a district marker to update the district detail panel.
+        </p>
+        <p class="small-note">Text alternative (district alert list):</p>
+        <ul id="district-alert-list" class="text-alert-list"></ul>
+      </section>
+
+      <section class="panel" aria-labelledby="detail-title">
+        <div class="panel-header">
+          <h2 id="detail-title">District Detail</h2>
+          <span id="district-alert-pill" class="alert-pill">—</span>
+        </div>
+        <div class="district-title-row">
+          <h3 id="district-name">Select a district</h3>
+          <p id="district-environment" class="environment-tag">—</p>
+        </div>
+
+        <div class="metric-grid" id="district-current-metrics"></div>
+
+        <div class="chart-grid">
+          <div class="chart-wrap">
+            <h4>5-Day Forecast (Temperature & Heat Index)</h4>
+            <canvas id="forecastChart" aria-label="District 5-day forecast line chart">
+              District 5-day forecast chart
+            </canvas>
+          </div>
+          <div class="chart-wrap">
+            <h4>HHRI Components</h4>
+            <canvas id="hhriBreakdownChart" aria-label="District HHRI components doughnut chart">
+              District HHRI components chart
+            </canvas>
+            <p class="small-note" id="hhri-total-note"></p>
+          </div>
+        </div>
+
+        <h4>Health-Risk Indicators (Sample Estimates)</h4>
+        <div class="metric-grid" id="health-indicators"></div>
+        <p class="sample-tag" id="district-sample-label"></p>
+      </section>
+
+      <section class="panel" aria-labelledby="legend-title">
+        <div class="panel-header">
+          <h2 id="legend-title">Heatwave Alert Framework (Section 15 Concept)</h2>
+        </div>
+        <ul class="legend-list">
+          <li><span class="dot green"></span> <strong>Green</strong> — No Action</li>
+          <li>
+            <span class="dot yellow"></span> <strong>Yellow</strong> — Weather warning,
+            monitor conditions
+          </li>
+          <li>
+            <span class="dot orange"></span> <strong>Orange</strong> — Extreme heat,
+            initiate preparedness, deploy health workers and cooling centres
+          </li>
+          <li>
+            <span class="dot red"></span> <strong>Red</strong> — Severe health threat,
+            emergency response and escalation
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel" aria-labelledby="mobile-title">
+        <div class="panel-header">
+          <h2 id="mobile-title">Mobile Alert Preview (Mock)</h2>
+        </div>
+        <div class="mobile-mock" id="mobile-alert-preview"></div>
+      </section>
+    </main>
+
+    <script src="vendor/leaflet/leaflet.js"></script>
+    <script src="vendor/chart.min.js"></script>
+    <script src="data/districts.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
