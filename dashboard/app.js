@@ -226,7 +226,7 @@
       }
     });
 
-    hhriTotalNoteEl.textContent = `Composite HHRI Score: ${district.hhriScore}/100 (derived from Exposure, Sensitivity, and inverse Adaptive Capacity).`;
+    hhriTotalNoteEl.textContent = `Composite HHRI Score: ${district.hhriScore}/100 (computed from Exposure, Sensitivity, and inverse Adaptive Capacity; chart displays the three raw component scores).`;
   }
 
   function renderMobileMock() {

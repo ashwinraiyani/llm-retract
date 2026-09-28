@@ -10,7 +10,7 @@ It is intended for project committee demonstration to show what the planned deci
 
 - A visual and interactive mockup of the proposed dashboard deliverables.
 - Built with **HTML, CSS, and JavaScript** only (no backend).
-- Uses **Leaflet** (map) and **Chart.js** (charts) through CDN links.
+- Uses **Leaflet** (map) and **Chart.js** (charts) in a static client-only setup (Leaflet from CDN and a vendored Chart.js file for reliable demo execution).
 - Uses district-level **sample/synthetic data only** for Gujarat districts.
 
 ## What this prototype is not
@@ -42,6 +42,7 @@ Then open: `http://localhost:8000`
 - `styles.css` — visual styling
 - `app.js` — map + chart + interaction logic
 - `data/districts.js` — synthetic district data used by the prototype
+- `vendor/chart.min.js` — local Chart.js bundle used for chart rendering
 
 ## Proposal-to-feature mapping
 
