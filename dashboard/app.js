@@ -224,17 +224,21 @@
       .filter((d) => d.alertLevel === "Red")
       .sort((a, b) => b.hhriScore - a.hhriScore)[0] || enrichedDistricts[0];
 
-    mobileAlertPreviewEl.innerHTML = `
-      <div class="mobile-header">Sample Push/SMS Alert Preview</div>
-      <div class="mobile-message">
-        <strong>RED ALERT — ${redDistrict.name} District</strong><br/>
-        Extreme heat and severe health risk expected in the next 24-48 hours.
-        <br/><br/>
-        Heat Index: ${redDistrict.current.heatIndexC.toFixed(1)}°C | HHRI: ${redDistrict.hhriScore}/100
-        <br/><br/>
-        Action: Activate emergency response, extend cooling centre hours, deploy field health workers, and issue public advisories for vulnerable populations.
-      </div>
-    `;
+    mobileAlertPreviewEl.replaceChildren();
+
+    const header = document.createElement("div");
+    header.className = "mobile-header";
+    header.textContent = "Sample Push/SMS Alert Preview";
+
+    const message = document.createElement("div");
+    message.className = "mobile-message";
+    message.textContent =
+      `RED ALERT — ${redDistrict.name} District\n\n` +
+      "Extreme heat and severe health risk expected in the next 24-48 hours.\n\n" +
+      `Heat Index: ${redDistrict.current.heatIndexC.toFixed(1)}°C | HHRI: ${redDistrict.hhriScore}/100\n\n` +
+      "Action: Activate emergency response, extend cooling centre hours, deploy field health workers, and issue public advisories for vulnerable populations.";
+
+    mobileAlertPreviewEl.append(header, message);
   }
 
   enrichedDistricts.forEach((district) => {
