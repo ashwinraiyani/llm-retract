@@ -57,6 +57,7 @@
   const hhriTotalNoteEl = document.getElementById("hhri-total-note");
   const districtSampleLabelEl = document.getElementById("district-sample-label");
   const mobileAlertPreviewEl = document.getElementById("mobile-alert-preview");
+  const districtAlertListEl = document.getElementById("district-alert-list");
 
   let forecastChart;
   let hhriBreakdownChart;
@@ -82,6 +83,15 @@
 
     if (stateHhriChart) {
       stateHhriChart.destroy();
+    }
+
+    function renderDistrictAlertList() {
+      districtAlertListEl.replaceChildren();
+      enrichedDistricts.forEach((district) => {
+        const item = document.createElement("li");
+        item.textContent = `${district.name}: ${district.alertLevel} alert`;
+        districtAlertListEl.appendChild(item);
+      });
     }
 
     stateHhriChart = new Chart(document.getElementById("stateHhriChart"), {
@@ -251,6 +261,7 @@
   });
 
   renderSummary();
+  renderDistrictAlertList();
   renderMobileMock();
   renderDetail(enrichedDistricts[0]);
 })();

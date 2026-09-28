@@ -38,7 +38,9 @@
         </div>
         <div class="summary-cards" id="summary-cards"></div>
         <div class="chart-wrap short">
-          <canvas id="stateHhriChart" aria-label="State HHRI bar chart"></canvas>
+          <canvas id="stateHhriChart" aria-label="State HHRI bar chart">
+            State HHRI comparison bar chart
+          </canvas>
         </div>
       </section>
 
@@ -50,6 +52,8 @@
         <p class="small-note">
           Click a district marker to update the district detail panel.
         </p>
+        <p class="small-note">Text alternative (district alert list):</p>
+        <ul id="district-alert-list" class="text-alert-list"></ul>
       </section>
 
       <section class="panel" aria-labelledby="detail-title">
@@ -67,11 +71,15 @@
         <div class="chart-grid">
           <div class="chart-wrap">
             <h4>5-Day Forecast (Temperature & Heat Index)</h4>
-            <canvas id="forecastChart"></canvas>
+            <canvas id="forecastChart" aria-label="District 5-day forecast line chart">
+              District 5-day forecast chart
+            </canvas>
           </div>
           <div class="chart-wrap">
             <h4>HHRI Components</h4>
-            <canvas id="hhriBreakdownChart"></canvas>
+            <canvas id="hhriBreakdownChart" aria-label="District HHRI components doughnut chart">
+              District HHRI components chart
+            </canvas>
             <p class="small-note" id="hhri-total-note"></p>
           </div>
         </div>

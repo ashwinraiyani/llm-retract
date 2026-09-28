@@ -45,12 +45,12 @@ Then open: `http://localhost:8000`
 
 ## Proposal-to-feature mapping
 
-Prototype feature | Proposal section alignment | How this prototype demonstrates it
---- | --- | ---
-HHRI components (Exposure, Sensitivity, Adaptive Capacity) and composite risk score | **Section 8** (Conceptual Framework / HHRI) | District panel shows component breakdown and derived HHRI score
-Decision-support dashboard with map, current conditions, forecast, and risk indicators | **Section 14** (Dashboard design) | Interactive map and district detail panel with current + forecast + health-risk metrics
-Alert legend (Green → Yellow → Orange → Red) with operational meaning | **Section 15** (Alert framework) | Visible alert tier legend and district-level alert color coding
-Mobile alert preview | **Section 15** (Mobile Alert Framework) | Mock push/SMS preview for a high-risk district
+| Prototype feature | Proposal section alignment | How this prototype demonstrates it |
+| --- | --- | --- |
+| HHRI components (Exposure, Sensitivity, Adaptive Capacity) and composite risk score | **Section 8** (Conceptual Framework / HHRI) | District panel shows component breakdown and derived HHRI score |
+| Decision-support dashboard with map, current conditions, forecast, and risk indicators | **Section 14** (Dashboard design) | Interactive map and district detail panel with current + forecast + health-risk metrics |
+| Alert legend (Green → Yellow → Orange → Red) with operational meaning | **Section 15** (Alert framework) | Visible alert tier legend and district-level alert color coding |
+| Mobile alert preview | **Section 15** (Mobile Alert Framework) | Mock push/SMS preview for a high-risk district |
 
 ## Notes
 

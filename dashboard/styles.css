@@ -239,6 +239,13 @@ body {
   font-size: 0.82rem;
 }
 
+.text-alert-list {
+  margin: 0.35rem 0 0;
+  padding-left: 1rem;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
 @media (max-width: 1180px) {
   .layout-grid,
   .chart-grid {
